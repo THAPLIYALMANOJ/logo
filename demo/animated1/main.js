@@ -31,7 +31,7 @@ function rotateProp() {
 }
 
 function rippleSurface() {
-  const halftime = 1500;
+  const halftime = 1000;
   var fluid = d3.select("#fluid");
   var originalPath = fluid.attr("d");
   var fluidReverse = d3.select("#fluid-reverse");
@@ -51,12 +51,6 @@ function rippleSurface() {
       .attr("d", originalPath)
       .on("end", repeat);
   }
-}
-
-function createTransformTween(tweenFrom, tweenTo) {
-  return function () {
-    // Return string interpolator
-  };
 }
 
 /**
