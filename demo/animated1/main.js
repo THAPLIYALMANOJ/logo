@@ -14,16 +14,20 @@ function rotateProp(){
   var propCenter = getPropCenterVector();
   var originalTransform = prop.attr("transform");
   var startTransform = 'rotate(0,' + propCenter.x + "," + propCenter.y + ") " + originalTransform;
-  var endTransform = 'rotate(3600,' + propCenter.x + "," + propCenter.y + ") " + originalTransform;
-  var transition = prop
-   .transition()
-   .duration(30000)
-   .ease(d3.easeLinear);
+  var endTransform = 'rotate(360,' + propCenter.x + "," + propCenter.y + ") " + originalTransform;
 
-  transition
-   .attrTween("transform", function(){
-      return d3.interpolateString(startTransform, endTransform);
-   });
+  repeat();
+
+  function repeat() {
+    prop
+    .transition()
+    .duration(3000)
+    .ease(d3.easeLinear)
+    .attrTween("transform", function(){
+        return d3.interpolateString(startTransform, endTransform);
+    })
+    .on("end", repeat)
+  } 
 }
 
 function rippleSurface(){
