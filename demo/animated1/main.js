@@ -9,20 +9,20 @@ d3.xml("logo.svg").mimeType("image/svg+xml").get(function (error, xml) {
 
 function rotateProp(){
   var propCenterTransform = d3.select("#propCenter").attr("transform");
-  var propCenterTransformMatrixValues = getMatrixAsObject(propCenterTransform);
+  var propCenter = getMatrixAsObject(propCenterTransform);
 
   // var propCenterDOMX = d3.transform(propCenterDOMTransform).translate;
-  var propCenterDOM = document.getElementById("propCenter").getBoundingClientRect();
-  var propCenterDOMX = ((propCenterDOM.right - propCenterDOM.left) / 2) + propCenterDOM.left;
-  var propCenterDOMY = ((propCenterDOM.top - propCenterDOM.bottom) / 2) + propCenterDOM.bottom;
+  // var propCenterDOM = document.getElementById("propCenter").getBoundingClientRect();
+  // var propCenterDOMX = ((propCenterDOM.right - propCenterDOM.left) / 2) + propCenterDOM.left;
+  // var propCenterDOMY = ((propCenterDOM.top - propCenterDOM.bottom) / 2) + propCenterDOM.bottom;
 
   var prop = d3.select("#propeller");
   var originalTransform = prop.attr("transform");
-  var startTransform = 'rotate(0,' + propCenterDOMX + "," + propCenterDOMY + ") " + originalTransform;
-  var endTransform = 'rotate(359,' + propCenterDOMX + "," + propCenterDOMY + ") " + originalTransform;
+  var startTransform = 'rotate(0,' + propCenter.x + "," + propCenter.y + ") " + originalTransform;
+  var endTransform = 'rotate(3600,' + propCenter.x + "," + propCenter.y + ") " + originalTransform;
   var t1 = prop
    .transition()
-   .duration(3000)
+   .duration(8000)
    .ease(d3.easeLinear);
 
   t1
