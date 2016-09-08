@@ -48,10 +48,13 @@ function getMatrixAsObject(sMatrixTransform){
   var stringValues = sMatrixTransform.substring(openParens + 1);
   var stringValues = stringValues.substring(0, stringValues.length - 1);
   var arrayValues = stringValues.split(",");
+  var arrayFloats = arrayValues.map(function(stringValue){
+    return parseFloat(stringValue);
+  })
 
   // TODO add other values later
-  matrixValues.x = arrayValues[4];
-  matrixValues.y = arrayValues[5];
+  matrixValues.x = arrayFloats[0] + arrayFloats[2] + arrayFloats[4];
+  matrixValues.y = arrayFloats[1] + arrayFloats[3] + arrayFloats[5];
   return matrixValues;
 
 }
