@@ -4,6 +4,7 @@ d3.xml("logo.svg").mimeType("image/svg+xml").get(function (error, xml) {
     .getElementById("logo")
     .appendChild(xml.documentElement);
 
+  rippleSurface();
   rotateProp();
 });
 
@@ -14,17 +15,39 @@ function rotateProp(){
   var originalTransform = prop.attr("transform");
   var startTransform = 'rotate(0,' + propCenter.x + "," + propCenter.y + ") " + originalTransform;
   var endTransform = 'rotate(3600,' + propCenter.x + "," + propCenter.y + ") " + originalTransform;
-  var t1 = prop
+  var transition = prop
    .transition()
-   .duration(80000)
+   .duration(30000)
    .ease(d3.easeLinear);
 
-  t1
+  transition
    .attrTween("transform", function(){
       return d3.interpolateString(startTransform, endTransform);
    });
 }
 
+function rippleSurface(){
+  const halftime = 1500;
+  var fluid = d3.select("#fluid");
+  var originalPath = fluid.attr("d");
+  var fluidReverse = d3.select("#fluid-reverse");
+  var reversePath = fluidReverse.attr("d");
+
+  repeat();
+
+  function repeat(){
+    fluid
+      .transition()
+      .ease(d3.easeLinear)
+      .duration(halftime)
+      .attr("d", reversePath)
+      .transition()
+      .ease(d3.easeLinear)
+      .duration(halftime)
+      .attr("d", originalPath)
+      .on("end", repeat);
+  }
+}
 
 function createTransformTween(tweenFrom, tweenTo){
     return function(){
