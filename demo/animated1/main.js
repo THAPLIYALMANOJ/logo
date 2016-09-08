@@ -8,21 +8,15 @@ d3.xml("logo.svg").mimeType("image/svg+xml").get(function (error, xml) {
 });
 
 function rotateProp(){
-  var propCenterTransform = d3.select("#propCenter").attr("transform");
-  var propCenter = getMatrixAsObject(propCenterTransform);
-
-  // var propCenterDOMX = d3.transform(propCenterDOMTransform).translate;
-  // var propCenterDOM = document.getElementById("propCenter").getBoundingClientRect();
-  // var propCenterDOMX = ((propCenterDOM.right - propCenterDOM.left) / 2) + propCenterDOM.left;
-  // var propCenterDOMY = ((propCenterDOM.top - propCenterDOM.bottom) / 2) + propCenterDOM.bottom;
 
   var prop = d3.select("#propeller");
+  var propCenter = getPropCenterVector();
   var originalTransform = prop.attr("transform");
   var startTransform = 'rotate(0,' + propCenter.x + "," + propCenter.y + ") " + originalTransform;
   var endTransform = 'rotate(3600,' + propCenter.x + "," + propCenter.y + ") " + originalTransform;
   var t1 = prop
    .transition()
-   .duration(8000)
+   .duration(80000)
    .ease(d3.easeLinear);
 
   t1
@@ -39,11 +33,13 @@ function createTransformTween(tweenFrom, tweenTo){
 }
 
 /**
- * Takes a string in form of "matrix(0.01,0,0,0.01,301.18303,421.24613)" and returns object
+ * Returns object with x and y of propeller center
  */
-function getMatrixAsObject(sMatrixTransform){
-  var matrixValues = {};
+function getPropCenterVector(sMatrixTransform){
+  // Get prop center in form of "matrix(a,b,c,d,e,f)" 
+  var sMatrixTransform = d3.select("#propCenter").attr("transform");
 
+  // Convert string matrix transform to array of floats
   var openParens = sMatrixTransform.indexOf("(");
   var stringValues = sMatrixTransform.substring(openParens + 1);
   var stringValues = stringValues.substring(0, stringValues.length - 1);
@@ -52,9 +48,10 @@ function getMatrixAsObject(sMatrixTransform){
     return parseFloat(stringValue);
   })
 
-  // TODO add other values later
-  matrixValues.x = arrayFloats[0] + arrayFloats[2] + arrayFloats[4];
-  matrixValues.y = arrayFloats[1] + arrayFloats[3] + arrayFloats[5];
-  return matrixValues;
+  // Build vector object
+  var vector = {};
+  vector.x = arrayFloats[0] + arrayFloats[2] + arrayFloats[4];
+  vector.y = arrayFloats[1] + arrayFloats[3] + arrayFloats[5];
+  return vector;
 
 }

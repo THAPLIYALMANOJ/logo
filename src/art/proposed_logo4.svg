@@ -39,9 +39,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="1.6715757"
-     inkscape:cy="241.43077"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="-199.84237"
+     inkscape:cy="146.46296"
      inkscape:current-layer="layer2"
      inkscape:document-units="px"
      showgrid="false"
@@ -69,6 +69,13 @@
      inkscape:label="logo"
      style="display:inline;filter:url(#filter4157)">
     <path
+       sodipodi:nodetypes="ccccccccccc"
+       inkscape:connector-curvature="0"
+       d="m 383.87495,192.98328 c 4.89033,16.22589 142.1517,240.8342 142.1517,240.8342 15.08346,23.05928 33.67133,133.60378 -50.24328,133.19882 l -175.78338,0 -175.78337,0 C 40.302011,567.42126 58.889882,456.87676 73.973345,433.81748 c 0,0 137.261365,-224.60831 142.151695,-240.8342 l -9.06579,20.49422 c 47.38185,-36.44134 65.23479,-11.49423 93.26262,-7.69998 39.04493,10.90381 60.0681,-8.03579 78.11742,-31.89996 z"
+       style="fill:none;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4157);enable-background:new"
+       id="fluid-reverse"
+       transform="matrix(-1,0,0,1,599.99999,0)" />
+    <path
        id="fluid"
        style="enable-background:new;display:inline;fill:#008000;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter4157);fill-opacity:1"
        d="m 383.87495,192.98328 c 4.89033,16.22589 142.1517,240.8342 142.1517,240.8342 15.08346,23.05928 33.67133,133.60378 -50.24328,133.19882 l -175.78338,0 -175.78337,0 C 40.302011,567.42126 58.889882,456.87676 73.973345,433.81748 c 0,0 137.261365,-224.60831 142.151695,-240.8342 l -9.06579,20.49422 c 47.38185,-36.44134 65.23479,-11.49423 93.26262,-7.69998 39.04493,10.90381 60.0681,-8.03579 78.11742,-31.89996 z"
@@ -78,7 +85,7 @@
        id="propeller"
        transform="matrix(3.2732895,0,0,-3.2732895,136.3355,542.18758)"
        inkscape:label="propeller"
-       style="fill:#333333"
+       style="fill:#000027;fill-opacity:1"
        inkscape:export-filename="/home/peter/downloads/propeller.png"
        inkscape:export-xdpi="9.6000004"
        inkscape:export-ydpi="9.6000004">
@@ -87,28 +94,28 @@
          d="m 50.071,27.404928 c 4.992717,0 9.047035,4.015764 9.047035,8.963759 0,4.952621 -4.055089,8.968385 -9.047035,8.968385 -4.996573,0 -9.047035,-4.015764 -9.047035,-8.968385 0,-4.947995 4.050462,-8.963759 9.047035,-8.963759"
          clip-rule="evenodd"
          inkscape:connector-curvature="0"
-         style="fill-rule:evenodd;fill:#333333"
+         style="fill-rule:evenodd;fill:#000027;fill-opacity:1"
          inkscape:label="prop_cone" />
       <path
          id="blade2"
          d="m 63.21,32.222 0.093,0.092 c 14.102,-2.42 26.854,-9.807 35.923,-20.8 l 0.012,-0.023 C 99.729,10.934 100,10.229 100,9.5 100,7.803 98.575,6.433 96.829,6.433 c -0.179,0 -0.351,0.011 -0.528,0.04 L 96.209,6.364 C 82.075,8.658 69.255,15.953 60.103,26.894 l 0.172,0.029 c 1.422,1.543 2.474,3.384 3.083,5.396 L 63.21,32.222 z"
          clip-rule="evenodd"
          inkscape:connector-curvature="0"
-         style="fill-rule:evenodd;fill:#333333"
+         style="fill-rule:evenodd;fill:#000027;fill-opacity:1"
          inkscape:label="blade2" />
       <path
          id="blade3"
          d="M 3.596,6.535 3.694,6.473 C 3.519,6.444 3.344,6.433 3.172,6.433 1.423,6.433 0,7.803 0,9.5 c 0,0.7 0.247,1.382 0.703,1.928 l 0.043,0.045 c 9.012,11.017 21.73,18.421 35.797,20.84 l -0.006,0.006 c 0.608,-2.002 1.663,-3.842 3.088,-5.38 L 39.62,26.893 C 30.51,15.952 17.732,8.657 3.646,6.363 l -0.05,0.172 z"
          clip-rule="evenodd"
          inkscape:connector-curvature="0"
-         style="fill-rule:evenodd;fill:#333333"
+         style="fill-rule:evenodd;fill:#000027;fill-opacity:1"
          inkscape:label="blade3" />
       <path
          id="blade1"
          d="m 52.953,49.874 v 0.022 c -1.001,0.195 -2.026,0.299 -3.062,0.299 -1.063,0 -2.124,-0.109 -3.165,-0.321 l -0.089,0.132 c -2.392,6.526 -3.613,13.425 -3.613,20.376 0,7.197 1.308,14.332 3.866,21.059 l 0.04,0.086 c 0.464,1.273 1.646,2.11 2.961,2.11 1.316,0 2.498,-0.837 2.968,-2.11 l -0.062,-0.086 c 2.552,-6.727 3.859,-13.861 3.859,-21.059 0,-6.951 -1.221,-13.85 -3.607,-20.376 l -0.096,-0.132 z"
          clip-rule="evenodd"
          inkscape:connector-curvature="0"
-         style="fill-rule:evenodd;fill:#333333"
+         style="fill-rule:evenodd;fill:#000027;fill-opacity:1"
          inkscape:label="blade1" />
     </g>
     <path
