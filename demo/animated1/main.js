@@ -8,7 +8,7 @@ d3.xml("logo.svg").mimeType("image/svg+xml").get(function (error, xml) {
   rotateProp();
 });
 
-function rotateProp(){
+function rotateProp() {
 
   var prop = d3.select("#propeller");
   var propCenter = getPropCenterVector();
@@ -20,17 +20,17 @@ function rotateProp(){
 
   function repeat() {
     prop
-    .transition()
-    .duration(3000)
-    .ease(d3.easeLinear)
-    .attrTween("transform", function(){
+      .transition()
+      .duration(3000)
+      .ease(d3.easeLinear)
+      .attrTween("transform", function () {
         return d3.interpolateString(startTransform, endTransform);
-    })
-    .on("end", repeat)
-  } 
+      })
+      .on("end", repeat)
+  }
 }
 
-function rippleSurface(){
+function rippleSurface() {
   const halftime = 1500;
   var fluid = d3.select("#fluid");
   var originalPath = fluid.attr("d");
@@ -39,7 +39,7 @@ function rippleSurface(){
 
   repeat();
 
-  function repeat(){
+  function repeat() {
     fluid
       .transition()
       .ease(d3.easeLinear)
@@ -53,16 +53,16 @@ function rippleSurface(){
   }
 }
 
-function createTransformTween(tweenFrom, tweenTo){
-    return function(){
-        // Return string interpolator
-    };         
+function createTransformTween(tweenFrom, tweenTo) {
+  return function () {
+    // Return string interpolator
+  };
 }
 
 /**
  * Returns object with x and y of propeller center
  */
-function getPropCenterVector(sMatrixTransform){
+function getPropCenterVector(sMatrixTransform) {
   // Get prop center in form of "matrix(a,b,c,d,e,f)" 
   var sMatrixTransform = d3.select("#propCenter").attr("transform");
 
@@ -71,7 +71,7 @@ function getPropCenterVector(sMatrixTransform){
   var stringValues = sMatrixTransform.substring(openParens + 1);
   var stringValues = stringValues.substring(0, stringValues.length - 1);
   var arrayValues = stringValues.split(",");
-  var arrayFloats = arrayValues.map(function(stringValue){
+  var arrayFloats = arrayValues.map(function (stringValue) {
     return parseFloat(stringValue);
   })
 
