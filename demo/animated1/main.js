@@ -21,7 +21,7 @@ function rotateProp() {
   function repeat() {
     prop
       .transition()
-      .duration(3000)
+      .duration(1000)
       .ease(d3.easeLinear)
       .attrTween("transform", function () {
         return d3.interpolateString(startTransform, endTransform);
@@ -31,7 +31,7 @@ function rotateProp() {
 }
 
 function rippleSurface() {
-  const halftime = 1000;
+  const halftime = 1500;
   var fluid = d3.select("#fluid");
   var originalPath = fluid.attr("d");
   var fluidReverse = d3.select("#fluid-reverse");
